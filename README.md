@@ -1,6 +1,5 @@
 # Docker for AFib prediction 
-# Instructions co-written by Sangwouk Cho, Yonsei University College of medicine
-# Version 0.3.0, Nov 18 2025
+Version 0.3.0, Nov 18 2025
 
 ## Overview 
 This repository provides a complete pipeline for predicting **Atrial Fibrillation (AFib)** from raw ECG signals using a Dockerized environment.
@@ -20,16 +19,12 @@ To run the prediction, the user only needs to:
 The system will output predicted AFib probability scores, and when
 labels are provided, it will also generate a summary evaluation report.
 
-------------------------------------------------------------------------
-
 ## Build the Docker image
 To begin with, make sure that `Docker` is installed on the machine (Please see `docker_installation.md` file). Then, run the following bash command in the root directory:
 
 >>> docker load < femur-seg.tar
 
 Here, the name of docker is `ecg-af:latest`
-
-------------------------------------------------------------------------
 
 
 ## Project Structure
@@ -67,8 +62,6 @@ If ground-truth AFib labels exist, fill them as:
 When enabled, the system will match filenames automatically and compute
 label-based summary results.
 
-------------------------------------------------------------------------
-
 
 ## Configuration (`config.yaml`)
 
@@ -76,7 +69,6 @@ Customize computation and evaluation parameters using the `config.yaml`
 file:
 
 ``` yaml
-############ ECG AFib Prediction Config ##############
 
 # dropout of final FC layer
 dropout: 0.5
@@ -93,7 +85,6 @@ batch_size: 15
 # label control
 use_label: False      # True = use AF-label.csv and generate summary
 label: 'AF-label.csv'
-######################################################
 ```
 
 ### Key Option Behavior
@@ -104,8 +95,6 @@ label: 'AF-label.csv'
 -   `use_label: True`\
     → System loads AF-label.csv and outputs prediction + summary evaluation file.
 
-
-------------------------------------------------------------------------
 
 ## Run Prediction
 
@@ -129,12 +118,8 @@ bash run_prediction.sh CPU
 
 **Note:** CPU mode is operational but much slower. GPU is highly recommended.
 
-------------------------------------------------------------------------
-
 ## Notes
 
 -   **Do not modify the folder structure.** Simply drop ECG files into the `ECG/` directory.
 -   Output prediction files will be saved automatically.
 -   When labels are provided (`use_label=True`), a summary evaluation Text file will also be generated.
-
-------------------------------------------------------------------------
