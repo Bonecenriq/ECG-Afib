@@ -1,5 +1,4 @@
 #! /bin/bash
-# PREDICTION: ./run_segmentation.sh <GPU/CPU>
 
 if [[ "$1" == "GPU" ]]; then
     docker run \
