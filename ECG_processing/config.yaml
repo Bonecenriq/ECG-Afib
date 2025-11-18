@@ -1,0 +1,17 @@
+############ Femur Segmentation Config ##############
+
+# dropout rate of FC layer (default=0.5)
+dropout: 0.5
+
+# use gpu or not (cpu only)
+use_gpu: True
+
+# GPU ID
+gpu_id: 1
+
+# batch size (default=8)
+batch_size: 15
+
+# GT labels
+use_label: False
+label: 'AF-label.csv'
