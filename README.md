@@ -6,9 +6,9 @@ This repository provides a complete pipeline for predicting **Atrial Fibrillatio
 
 To run the prediction, the user only needs to:
 
-1.  Place ECG files into the `ECG/` folder\
+1.  Place ECG files into the `ECG/` folder
 
-2.  (Optional) Add real AF labels into `AF-label.csv`\
+2.  (Optional) Add real AF labels into `AF-label.csv`
 
 3.  Run the shell script:
 
@@ -22,7 +22,7 @@ labels are provided, it will also generate a summary evaluation report.
 ## Build the Docker image
 To begin with, make sure that `Docker` is installed on the machine (Please see `docker_installation.md` file). Then, run the following bash command in the root directory:
 
->>> docker load < femur-seg.tar
+> docker load < femur-seg.tar
 
 Here, the name of docker is `ecg-af:latest`
 
@@ -44,23 +44,22 @@ After extracting the bundle, your directory should look as follows:
 
 ### ECG Folder
 
--   Place all your input ECG files in this folder.\
--   Files should contain **≥10 seconds** of 12-lead ECG waveform.\
--   For 12-lead ECG, all leads should be included as columns in the file (e.g., CSV with 12 channels).\
--   Each ECG file must contain at least 10 seconds of signal sampled at ≥ 500 Hz\
+-   Place all your input ECG files in this folder.
+-   Files should contain **≥10 seconds** of 12-lead ECG waveform.
+-   For 12-lead ECG, all leads should be included as columns in the file (e.g., CSV with 12 channels).
+-   Each ECG file must contain at least 10 seconds of signal sampled at ≥ 500 Hz.
 -   Filenames may be arbitrary (e.g., `123.csv`, `testA.csv`).
 
 ### AF-label.csv (Optional)
 
 If ground-truth AFib labels exist, fill them as:
 
-  filename           DX
-  ------------------ -----------
-  example_0001   AF
-  example_0002   Normal
+| filename      | DX     |
+|---------------|--------|
+| example_0001  | AF     |
+| example_0002  | Normal |
 
-When enabled, the system will match filenames automatically and compute
-label-based summary results.
+When enabled, the system will match filenames automatically and compute label-based summary results.
 
 
 ## Configuration (`config.yaml`)
